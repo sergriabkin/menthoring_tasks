@@ -1,15 +1,14 @@
 package com.company.java8.task1;
 
-public class Task1 {
+import com.company.java8.Task;
+
+public class Task1 implements Task {
 
     private Runnable action1;
     private Runnable action2;
 
-    public static void main(String[] args) {
-        new Task1().performTask();
-    }
-
-    private void performTask(){
+    @Override
+    public void performTask(){
         initActions();
         startThreads();
     }
