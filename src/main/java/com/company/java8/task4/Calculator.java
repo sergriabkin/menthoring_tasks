@@ -5,21 +5,19 @@ public class Calculator {
     private ThreeFunction<String, Integer, Sign, Integer> calculator;
 
     public Calculator() {
-        init();
+        calculator = this::calculatorsLogic;
     }
 
-    private void init() {
-        calculator = (number1, sign, number2) -> {
-            int result = 0;
+    private String calculatorsLogic(Integer number1, Sign sign, Integer number2) {
+        int result = 0;
 
-            if (sign.equals(Sign.MINUS)) {
-                result = number1 - number2;
-            } else if (sign.equals(Sign.PLUS)) {
-                result = number1 + number2;
-            }
+        if (sign.equals(Sign.MINUS)) {
+            result = number1 - number2;
+        } else if (sign.equals(Sign.PLUS)) {
+            result = number1 + number2;
+        }
 
-            return "result of operation " + number1 + sign.getValue() + number2 + " is: " + result;
-        };
+        return "result of operation " + number1 + sign.getValue() + number2 + " is: " + result;
     }
 
     public String calculate(String expression) {
