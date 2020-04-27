@@ -13,10 +13,14 @@ public class Task8 implements Task {
         );
 
         System.out.println("Task 8:");
-
-        tree.flattened()
-                .map(Tree::getValue)
-                .forEach(System.out::println);
+        System.out.println("Get all values in the tree: ");
+        tree.getAllValues().forEach(System.out::println);
+        System.out.println("Get even values: ");
+        tree.getEvenValues().forEach(System.out::println);
+        System.out.println("Sum of even values: ");
+        tree.sumOfEvenValues().ifPresent(System.out::println);
+        System.out.println("Does it contain 13?: ");
+        System.out.println(tree.isContains13());
 
     }
 
